@@ -1,0 +1,83 @@
+.container {
+  text-align: center;
+  margin: 20px auto;
+  padding: 0 20px; // Ajout de padding pour les petits écrans
+
+  @media (max-width: 768px) {
+    margin: 10px auto;
+    padding: 0 10px; // Ajuste le padding pour les petits écrans
+  }
+}
+
+.title {
+  font-size: 24px;
+  border-radius: 8px;
+  color: white;
+  background-color: #008080;
+  margin-bottom: 20px;
+  padding: 10px 20px; // Ajout de padding pour donner de l'espace autour du texte
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+    padding: 8px 16px; // Ajuste la taille du texte et du padding sur petits écrans
+  }
+}
+
+.info-boxes {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+
+  @media (max-width: 768px) {
+    flex-direction: column; // Empile les boîtes d'informations sur petits écrans
+    align-items: center; // Centre les boîtes dans la direction verticale
+  }
+}
+
+.info-box {
+  border: 1px solid #008080;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin: 0 10px;
+  text-align: center;
+  width: 150px;
+
+  @media (max-width: 768px) {
+    width: 80%; // Prend plus de place sur petits écrans
+    margin-bottom: 15px; // Ajoute de l'espace entre les boîtes sur petits écrans
+  }
+}
+
+.info-box p {
+  font-size: 20px;
+  color: #343232;
+
+
+  @media (max-width: 768px) {
+    font-size: 12px; // Ajuste la taille du texte sur petits écrans
+  }
+}
+
+.info-box h2 {
+  font-size: 20px;
+  margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 18px; // Ajuste la taille du texte sur petits écrans
+  }
+}
+
+.chart-container {
+  height: 600px;
+  max-width: 800px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    max-width: 100%; // Le graphique prend tout l'espace sur petits écrans
+    height: 300px; // Réduit la hauteur du graphique sur petits écrans
+  }
+
+  @media (max-width: 480px) {
+    height: 250px; // Réduit encore plus la hauteur sur très petits écrans
+  }
+}

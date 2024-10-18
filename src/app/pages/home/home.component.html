@@ -1,3 +1,24 @@
-<h2>Olympic games app</h2>
-<hr />
-<p>{{ (olympics$ | async)?.length }} data loaded</p>
+<div class="container">
+  <div>
+    <h1 class="title">Medals per Country</h1>
+  </div>
+
+  <!-- Cadres affichant le nombre de JO et le nombre de pays -->
+  <div class="info-boxes">
+    <div class="info-box">
+      <p>Number of JOs</p>
+      <h2>{{ totalJO }}</h2>
+    </div>
+    <div class="info-box">
+      <p>Number of countries</p>
+      <h2>{{ totalCountries }}</h2>
+    </div>
+  </div>
+
+  <!-- Graphique en secteurs (Pie chart) -->
+  <div echarts [options]="chartOptions" class="chart-container" (chartClick)="onChartClick($event)"></div>
+</div>
+
+<ng-template #loading>
+  <p>Loading data...</p>
+</ng-template>
