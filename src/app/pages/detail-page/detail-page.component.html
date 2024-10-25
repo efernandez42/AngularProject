@@ -1,0 +1,29 @@
+<div *ngIf="olympic$ | async as olympic; else loading" class="detail-container">
+  <div class="back-button-container">
+    <button (click)="goBack()" class="back-button">←</button>
+  </div>
+  <h1 class="title">{{ olympic?.country }}</h1>
+
+  <!-- Cadres affichant les données du pays -->
+  <div class="info-boxes">
+    <div class="info-box">
+      <p>Number of entries</p>
+      <h2>{{ olympic?.participations?.length }}</h2>
+    </div>
+    <div class="info-box">
+      <p>Total number medals</p>
+      <h2>{{ getTotalMedals(olympic?.participations) }}</h2>
+    </div>
+    <div class="info-box">
+      <p>Total number of athletes</p>
+      <h2>{{ getTotalAthletes(olympic?.participations) }}</h2>
+    </div>
+  </div>
+
+  <!-- Graphique en ligne -->
+  <div echarts [options]="getChartOptions(olympic.participations)" class="chart-container"></div>
+</div>
+
+<ng-template #loading>
+  <p>Loading data...</p>
+</ng-template>

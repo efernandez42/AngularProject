@@ -1,29 +1,28 @@
-# OlympicGamesStarter
+Bienvenue dans le projet Developpez-le-front-end-en-utilisant-Angular. 
+Ce projet consiste à développer le front-end d'un tableau de bord interactif pour visualiser les informations des précédents Jeux olympiques (nombre de médailles par pays, etc.). Le projet est conçu pour être utilisé sur les appareils mobiles et les ordinateurs.
 
-Ce projet a été généré avec [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
+Introduction
+Ce projet est une collaboration avec TéléSport pour les Jeux olympiques à venir. L'objectif est de permettre aux utilisateurs de visualiser des données historiques sur les performances des pays aux JO via un tableau de bord dynamique.
 
-N'oubliez pas d'installer vos node_modules avant de commencer (`npm install`).
+Prérequis
+Avant de commencer, assurez-vous d'avoir installé les éléments suivants :
 
-## Serveur de développement
+Node.js (version >= 14)
+Angular CLI (version >= 12)
 
-Exécutez `ng serve` pour un serveur de développement. Accédez à `http://localhost:4200/`. L'application se rechargera automatiquement si vous modifiez l'un des fichiers sources.
+Installation
 
-## Build
+1. Cloner le dépôt
+Commencez par cloner le projet depuis GitHub :
 
-Exécutez `ng build` pour générer le projet. Les artefacts de génération seront stockés dans le répertoire `dist/`.
+git clone https://github.com/efernandez42/Developpez-le-front-end-en-utilisant-Angular.git
+cd Developpez-le-front-end-en-utilisant-Angular
 
-## Par où commencer
+2. Installer les dépendances
+Ensuite, installez les dépendances nécessaires avec npm :
+npm install
 
-Comme vous pouvez le voir, une architecture a déjà été définie pour le projet. Ce n'est qu'une suggestion, vous pouvez choisir d'utiliser la vôtre. L'architecture prédéfinie comprend (en plus de l'architecture angulaire par défaut) les éléments suivants :
+3. Lancement de l'application
+Pour lancer l'application en mode développement, utilisez la commande suivante :
 
-- dossier `components` : contient tous les composants réutilisables
-- dossier `pages` : contient les composants utilisés pour le routage
-- dossier `core` : contient la logique métier (dossiers `services` et `models`)
-
-Je vous suggère de commencer par comprendre ce code de démarrage. Portez une attention particulière à `app-routing.module.ts` et à `olympic.service.ts`.
-
-Une fois maîtrisé, vous devez continuer en créant les interfaces TypeScript dans le dossier `models`. Comme vous pouvez le voir, j'ai déjà créé deux fichiers correspondant aux données incluses dans `olympic.json`. Avec vos interfaces, améliorez le code en remplaçant chaque `any` par l'interface correspondante.
-
-Vous êtes maintenant prêt à implémenter les fonctionnalités demandées.
-
-Bonne chance !
+ng serve

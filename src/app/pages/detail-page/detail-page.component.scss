@@ -1,0 +1,106 @@
+.detail-container {
+  text-align: center;
+  margin: 20px auto;
+  padding: 0 20px; // Ajout de padding pour les petits écrans
+
+  @media (max-width: 768px) {
+    margin: 10px auto;
+    padding: 0 10px; // Ajuste le padding pour les petits écrans
+  }
+}
+
+.title {
+  font-size: 24px;
+  color: #008080;
+  margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 20px; // Ajuste la taille du texte pour les petits écrans
+  }
+}
+
+.info-boxes {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+
+  @media (max-width: 768px) {
+    flex-direction: column; // Empile les boîtes d'informations sur petits écrans
+    align-items: center; // Centre les boîtes dans la direction verticale
+  }
+}
+
+.info-box {
+  background-color: #ffffff;
+  border: 1px solid #008080;
+  color: #000000;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin: 0 10px;
+  text-align: center;
+  width: 200px;
+
+  @media (max-width: 768px) {
+    width: 80%; // Augmente la largeur des boîtes sur petits écrans
+    margin-bottom: 15px; // Ajoute de l'espace entre les boîtes
+  }
+} 
+
+.info-box p {
+  font-size: 20px;
+  color: #343232;
+
+  @media (max-width: 768px) {
+    font-size: 12px; // Ajuste la taille de la police sur petits écrans
+  }
+}
+
+.info-box h2 {
+  font-size: 20px;
+  margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 18px; // Ajuste la taille de la police sur petits écrans
+  }
+}
+
+.chart-container {
+  height: 400px;
+  max-width: 800px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    max-width: 100%; // Le graphique occupe 100% de la largeur disponible sur petits écrans
+    height: 300px; // Diminue la hauteur du graphique
+  }
+
+  @media (max-width: 480px) {
+    height: 250px; // Diminue encore plus la hauteur pour très petits écrans
+  }
+}
+
+.back-button-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+.back-button {
+  background-color: #008080;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #006666;
+  }
+
+  @media (max-width: 768px) {
+    padding: 8px 16px; // Réduit la taille du bouton sur petits écrans
+    font-size: 12px;
+  }
+}

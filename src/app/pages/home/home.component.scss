@@ -1,6 +1,8 @@
 .container {
   text-align: center;
   margin: 20px auto;
+  place-items: center; // Centre verticalement et horizontalement
+
   padding: 0 20px; // Ajout de padding pour les petits écrans
 
   @media (max-width: 768px) {
@@ -15,6 +17,9 @@
   color: white;
   background-color: #008080;
   margin-bottom: 20px;
+  padding: 10px 20px; // Ajout de padding pour donner de l'espace autour du texte
+  text-align: center; // Centre le texte à l'intérieur du titre
+  width: 450px;
   padding: 10px 20px; // Ajout de padding pour donner de l'espace autour du texte
 
   @media (max-width: 768px) {
@@ -40,7 +45,7 @@
   padding: 10px 20px;
   margin: 0 10px;
   text-align: center;
-  width: 150px;
+  width: 200px;
 
   @media (max-width: 768px) {
     width: 80%; // Prend plus de place sur petits écrans
