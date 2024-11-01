@@ -5,7 +5,7 @@ import { Participation } from 'app/core/models/Participation';
 import { Olympic } from 'app/core/models/Olympic';
 import { OlympicService } from 'app/core/services/olympic.service';
 import { Location } from '@angular/common';
-
+import type { EChartsOption } from 'echarts';
 
 @Component({
   selector: 'app-detail-page',
@@ -15,7 +15,6 @@ import { Location } from '@angular/common';
 export class DetailPageComponent implements OnInit {
   public olympic$: Observable<Olympic | undefined> = of(undefined);
   public countryId: number;
-  
 
   constructor(
     private olympicService: OlympicService, 
@@ -33,7 +32,7 @@ export class DetailPageComponent implements OnInit {
     this.location.back(); // Navigue vers la page précédente
   }
   
-  getChartOptions(participations: Participation[]): any {
+  getChartOptions(participations: Participation[]): EChartsOption {
     const years = participations.map(p => p.year);
     const medals = participations.map(p => p.medalsCount);
     
@@ -41,9 +40,9 @@ export class DetailPageComponent implements OnInit {
       xAxis: {
         type: 'category',
         data: years,
-        name: 'Dates',  // Title for the x-axis
-        nameLocation: 'center',  // Center the title below the x-axis
-        nameGap: 30,  // Adjust this value to control spacing between axis and title
+        name: 'Dates',  
+        nameLocation: 'middle',
+        nameGap: 30,
         nameTextStyle: {
           fontSize: 28,
         },
@@ -51,11 +50,13 @@ export class DetailPageComponent implements OnInit {
       yAxis: {
         type: 'value',
       },
-      series: [{
-        data: medals,
-        type: 'line',
-        smooth: true,
-      }],
+      series: [
+        {
+          data: medals,
+          type: 'line',
+          smooth: true,
+        },
+      ],
     };
   }
 

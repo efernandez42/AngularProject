@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { OlympicService } from 'app/core/services/olympic.service';
+import type { EChartsOption } from 'echarts';
+import { Subject } from 'rxjs';
+
+interface ChartData {
+  name: string;
+  value: number;
+}
 
 @Component({
   selector: 'app-home',
@@ -8,9 +15,11 @@ import { OlympicService } from 'app/core/services/olympic.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  public chartOptions: any;
+  public chartOptions: EChartsOption | null = null;
   public totalJO = 0;
   public totalCountries = 0;
+
+  private unsubscribe$ = new Subject<void>(); // Subject pour gérer le désabonnement
 
   constructor(private olympicService: OlympicService, private router: Router) {}
 
@@ -22,14 +31,13 @@ export class HomeComponent implements OnInit {
         this.totalJO = olympics.reduce((sum, olympic) => sum + olympic.participations.length, 0); // Nombre total de JO
 
         // Préparation des données pour le graphique
-        const chartData = olympics.map(olympic => ({
+        const chartData: ChartData[] = olympics.map(olympic => ({
           name: olympic.country,
           value: olympic.participations.reduce((sum, participation) => sum + participation.medalsCount, 0) // Total des médailles par pays
         }));
 
         // Configuration du graphique en secteurs
         this.chartOptions = {
-
           tooltip: {
             trigger: 'item',
             formatter: '{b}: {c} ({d}%)' // Afficher le nombre total de médailles sur survol
@@ -55,7 +63,7 @@ export class HomeComponent implements OnInit {
   }
 
   // Lorsqu'on clique sur un pays, redirection vers la page de détails
-  onChartClick(event: any): void {
+  onChartClick(event: { name: string }): void {
     const countryName = event.name;
     const countryId = this.getCountryIdByName(countryName);
     if (countryId !== undefined) {
@@ -65,7 +73,6 @@ export class HomeComponent implements OnInit {
 
   // Méthode pour récupérer l'ID d'un pays par son nom
   getCountryIdByName(countryName: string): number | undefined {
-    // Récupérer les données des JO pour retrouver l'ID correspondant au nom du pays
     let countryId: number | undefined;
     this.olympicService.getOlympics().subscribe(olympics => {
       if (olympics) {
@@ -76,5 +83,9 @@ export class HomeComponent implements OnInit {
       }
     });
     return countryId;
+  }
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete(); 
   }
 }
