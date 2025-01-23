@@ -7,8 +7,8 @@ import { NgxEchartsModule } from 'ngx-echarts';
   declarations: [DetailPageComponent],
   imports: [
     CommonModule,
-    NgxEchartsModule // Ajoutez ce module ici
+    NgxEchartsModule 
   ],
-  exports: [DetailPageComponent] // Exporte le composant pour qu'il puisse être utilisé ailleurs
+  exports: [DetailPageComponent] 
 })
 export class DetailPageModule { }

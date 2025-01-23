@@ -54,7 +54,7 @@ export class DetailPageComponent implements OnInit {
         {
           data: medals,
           type: 'line',
-          smooth: true,
+          smooth: false,
         },
       ],
     };

@@ -11,14 +11,23 @@
 
 .title {
   font-size: 24px;
-  color: #008080;
+  border-radius: 8px;
+  color: white;
+  background-color: #008080;
   margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  padding: 10px 20px; // Ajout de padding pour donner de l'espace autour du texte
+  text-align: center; // Centre le texte à l'intérieur du titre
+  width: 450px;
+  padding: 10px 20px; // Ajout de padding pour donner de l'espace autour du texte
 
   @media (max-width: 768px) {
-    font-size: 20px; // Ajuste la taille du texte pour les petits écrans
+    font-size: 20px;
+    padding: 8px 16px; // Ajuste la taille du texte et du padding sur petits écrans
   }
 }
-
 .info-boxes {
   display: flex;
   justify-content: center;
