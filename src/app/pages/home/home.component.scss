@@ -39,36 +39,47 @@
   }
 }
 
+// Variables pour les couleurs et tailles
+$primary-color: #008080;
+$text-color: #343232;
+$border-radius: 8px;
+$default-font-size: 20px;
+$small-font-size: 12px;
+$medium-font-size: 18px;
+$box-width: 200px;
+$small-screen-width: 768px;
+
 .info-box {
-  border: 1px solid #008080;
-  border-radius: 8px;
+  border: 1px solid $primary-color;
+  border-radius: $border-radius;
   padding: 10px 20px;
   margin: 0 10px;
   text-align: center;
-  width: 200px;
+  width: $box-width;
 
-  @media (max-width: 768px) {
+  // Media query pour ajuster la largeur et espacement sur petits écrans
+  @media (max-width: $small-screen-width) {
     width: 80%; // Prend plus de place sur petits écrans
     margin-bottom: 15px; // Ajoute de l'espace entre les boîtes sur petits écrans
   }
-}
 
-.info-box p {
-  font-size: 20px;
-  color: #343232;
+  p, h2 {
+    font-size: $default-font-size;
+    color: $text-color;
 
-
-  @media (max-width: 768px) {
-    font-size: 12px; // Ajuste la taille du texte sur petits écrans
+    // Ajuste la taille du texte sur petits écrans
+    @media (max-width: $small-screen-width) {
+      font-size: $small-font-size;
+    }
   }
-}
 
-.info-box h2 {
-  font-size: 20px;
-  margin: 0;
+  h2 {
+    margin: 0;
 
-  @media (max-width: 768px) {
-    font-size: 18px; // Ajuste la taille du texte sur petits écrans
+    // Taille spécifique pour h2 sur petits écrans
+    @media (max-width: $small-screen-width) {
+      font-size: $medium-font-size;
+    }
   }
 }
 

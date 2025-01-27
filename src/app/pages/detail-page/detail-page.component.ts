@@ -61,9 +61,14 @@ export class DetailPageComponent implements OnInit {
   }
 
   // Calcul du total des médailles
-  getTotalMedals(participations: Participation[] = []): number {
+  getTotalMedals(participations: Participation[] | null = []): number {
+    if (!participations || participations.length === 0) {
+      return 0; // Retourner 0 si le tableau est null ou vide
+    }
+  
     return participations.reduce((total, participation) => total + participation.medalsCount, 0);
   }
+  
 
   // Calcul du total des athlètes
   getTotalAthletes(participations: Participation[] = []): number {
