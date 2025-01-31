@@ -65,13 +65,14 @@ export class DetailPageComponent implements OnInit {
     if (!participations || participations.length === 0) {
       return 0; // Retourner 0 si le tableau est null ou vide
     }
-  
+    // Calcul du total des médailles remportées lors de toutes les participations
     return participations.reduce((total, participation) => total + participation.medalsCount, 0);
   }
   
 
   // Calcul du total des athlètes
   getTotalAthletes(participations: Participation[] = []): number {
+    // Calcul du nombre total d'athlètes lors de toutes les participations
     return participations.reduce((total, participation) => total + participation.athleteCount, 0);
   }
 }

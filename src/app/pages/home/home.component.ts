@@ -103,7 +103,9 @@ export class HomeComponent implements OnInit {
     return countryId;
   }
   ngOnDestroy(): void {
+    // Émet un signal indiquant que l'observable doit être arrêté.
     this.unsubscribe$.next();
+     //Ferme définitivement l'observable pour libérer la mémoire.
     this.unsubscribe$.complete(); 
   }
 }

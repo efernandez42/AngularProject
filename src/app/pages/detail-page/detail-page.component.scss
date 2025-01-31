@@ -18,16 +18,16 @@
   margin-left: auto;
   margin-right: auto;
   align-items: center;
-  padding: 10px 20px; // Ajout de padding pour donner de l'espace autour du texte
-  text-align: center; // Centre le texte à l'intérieur du titre
+  text-align: center; /* Centre le texte à l'intérieur du titre */
   width: 450px;
-  padding: 10px 20px; // Ajout de padding pour donner de l'espace autour du texte
 
   @media (max-width: 768px) {
     font-size: 20px;
-    padding: 8px 16px; // Ajuste la taille du texte et du padding sur petits écrans
+    padding: 8px 16px; /* Ajuste la taille du texte et du padding sur petits écrans */
+    width: 82%; /* Réduit la largeur du cartouche pour les petits écrans */
   }
 }
+
 .info-boxes {
   display: flex;
   justify-content: center;
